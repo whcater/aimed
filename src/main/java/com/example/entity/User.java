@@ -21,7 +21,7 @@ public class User {
     @Column(name = "id", length = 30)
     // @GeneratedValue(strategy = GenerationType.UUID)
     // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
     private String name;
     private String email;
@@ -36,11 +36,11 @@ public class User {
     }
 
     // Getters and Setters
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
