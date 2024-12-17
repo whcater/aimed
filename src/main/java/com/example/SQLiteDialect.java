@@ -4,6 +4,7 @@ import org.hibernate.dialect.Dialect;
 import org.hibernate.dialect.DmlTargetColumnQualifierSupport;
 import org.hibernate.dialect.FunctionalDependencyAnalysisSupport;
 import org.hibernate.dialect.FunctionalDependencyAnalysisSupportImpl;
+import org.hibernate.dialect.H2Dialect;
 import org.hibernate.dialect.H2SqlAstTranslator;
 import org.hibernate.dialect.NullOrdering;
 import org.hibernate.dialect.Replacer;
@@ -141,7 +142,7 @@ public class SQLiteDialect extends Dialect {
 		ansiSequence = true;
 
 		// Prior to 1.4.200 the 'cascade' in 'drop table' was implicit
-		cascadeConstraints = true;
+		cascadeConstraints = false;
 		// 1.4.200 introduced changes in current_time and current_timestamp
 		useLocalTime = true;
 
