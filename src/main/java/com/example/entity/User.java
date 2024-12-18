@@ -9,7 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import org.hibernate.annotations.IdGeneratorType;
-import com.example.TimestampIdGenerator;
+import com.example.IdGenerator;
 
 @Entity
 @Table(name = "users") 
@@ -17,11 +17,11 @@ public class User {
 
     @Id 
     @GeneratedValue(generator = "timestampId") // 指定生成器名称
-    @GenericGenerator(name = "timestampId", strategy = "com.example.TimestampIdGenerator") // 配置生成器
+    @GenericGenerator(name = "timestampId", strategy = "com.example.IdGenerator") // 配置生成器
     @Column(name = "id", length = 30)
     // @GeneratedValue(strategy = GenerationType.UUID)
     // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     private String name;
     private String email;
@@ -36,11 +36,11 @@ public class User {
     }
 
     // Getters and Setters
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
