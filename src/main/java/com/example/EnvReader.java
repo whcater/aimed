@@ -1,4 +1,6 @@
 package com.example;
+import org.apache.logging.log4j.util.Strings;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
@@ -59,6 +61,7 @@ public class EnvReader {
         if (envMap.isEmpty()) {
             Initialize();
         }
+        if(!Strings.isEmpty(System.getenv(key))) return System.getenv(key);
         return envMap.get(key);
     }
 }
